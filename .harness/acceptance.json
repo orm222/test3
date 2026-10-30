@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "checker_argv": [
+    "{python}",
+    "-B",
+    ".harness/check_unittest.py",
+    "--start-directory",
+    "tests/acceptance"
+  ],
+  "required_ids_manifest": "acceptance/required_tests.json",
+  "protected_paths": [
+    "tests/acceptance",
+    "acceptance",
+    "docs/IMPLEMENTATION_CONTRACT.md"
+  ],
+  "boundary_tests": {
+    "Q-001": [
+      "test_fabquality.FabQualityAcceptance.test_13_reference_excluded_service_scope"
+    ],
+    "Q-002": [
+      "test_fabquality.FabQualityAcceptance.test_08_blocked_preserves_results_and_permanent_failure"
+    ],
+    "Q-003": [
+      "test_fabquality.FabQualityAcceptance.test_12_size_priority_no_event_created"
+    ],
+    "Q-004": [
+      "test_fabquality.FabQualityAcceptance.test_13_reference_excluded_service_scope"
+    ],
+    "Q-005": [
+      "test_fabquality.FabQualityAcceptance.test_08_blocked_preserves_results_and_permanent_failure"
+    ],
+    "Q-006": [
+      "test_fabquality.FabQualityAcceptance.test_12_size_priority_no_event_created"
+    ]
+  }
+}

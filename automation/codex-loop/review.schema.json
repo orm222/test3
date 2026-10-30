@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "run_id": {"type": "string"},
+    "task_id": {"type": "string"},
+    "round": {"type": "integer"},
+    "source_hash": {"type": "string"},
+    "verdict": {"type": "string", "enum": ["PASS", "FAIL", "UNVERIFIED"]},
+    "summary": {"type": "string"},
+    "repair_plan": {"type": "array", "items": {"type": "string"}},
+    "criterion_scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterion_id": {"type": "string", "enum": ["COR01", "COR02", "COR03", "COR04", "TEST01", "TEST02", "TEST03", "TEST04", "REL01", "REL02", "REL03", "REL04", "MEAS01", "MEAS02", "MEAS03", "MEAS04", "HAND01", "HAND02", "HAND03", "HAND04"]},
+          "status": {"type": "string", "enum": ["PASS", "PARTIAL", "FAIL", "UNVERIFIED", "NA"]},
+          "reason": {"type": "string"},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["criterion_id", "status", "reason", "evidence_refs"],
+        "additionalProperties": false
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_id": {"type": "string"},
+          "status": {"type": "string", "enum": ["PASS", "FAIL", "UNVERIFIED"]},
+          "expected": {"type": "string"},
+          "actual": {"type": "string"},
+          "verification_commands": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["requirement_id", "status", "expected", "actual", "verification_commands"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["run_id", "task_id", "round", "source_hash", "verdict", "summary", "repair_plan", "checks", "criterion_scores"],
+  "additionalProperties": false
+}

@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "spec": "PROBLEM.md",
+  "references": [
+    "PROBLEM.md",
+    "BOUNDARY_QUESTION_TEMPLATE.md",
+    "AGENTS.md",
+    "HANDOFF.md",
+    "docs/IMPLEMENTATION_CONTRACT.md",
+    "docs/CROSS_PLATFORM.md",
+    "INTERVIEW.md"
+  ],
+  "input_hashes": {
+    "AGENTS.md": "aba867bdaa743077e27adf380af8dd5ea715c3307981eae07121ab80c9996dd7",
+    "BOUNDARY_QUESTION_TEMPLATE.md": "3d81d0e5bd4b51e8687705354250a7e07d89e30ed848fb0b7f4bb1b299a623ae",
+    "HANDOFF.md": "41d674d8c9e8ab9d94adad069ee250f78981b80c9077356d53fec3bb5128194b",
+    "INTERVIEW.md": "f56e80cc95dafcf8dd361846f765de8dd5c3ee60d9fd936659099966971f8291",
+    "PROBLEM.md": "be77f60363f888e1c19b16eadb52607d014480ae63c45d4e5be29b42a2d5a819",
+    "docs/CROSS_PLATFORM.md": "bc70959b14fd494055c6b597eed47c8e856eb38d14a5a120a90ae1cf5155b12a",
+    "docs/IMPLEMENTATION_CONTRACT.md": "90656404fa8f28da649a2c026c8242aff9390d56b37c831002a73a08fd7a72de"
+  },
+  "status": "ready",
+  "questions": [
+    {
+      "template": "T03",
+      "question": "PROBLEM.md가 공통 선정·제출 기준으로 참조하는 SELECTION_REFERENCE.md가 현재 경로에 없습니다. 해당 문서의 내용을 제공하거나, 읽을 수 있는 프로젝트 내 경로를 알려주시겠습니까?",
+      "decides": "공통 선정·제출 기준에 따른 추가 요구사항과 충돌 여부를 확인한다.",
+      "follow_up_to": null,
+      "id": "Q-001"
+    },
+    {
+      "template": "T09",
+      "question": "초안 stub이 실패하여 BLOCKED가 되었지만 이미지 검사·LOT 추적·정책 판정은 완료된 경우, GET /cases/{case_id}에서 완료된 결과를 그대로 반환해야 합니까? 이때 draft만 null로 두는지, 함께 비워야 하는 결과가 있는지 알려주세요.",
+      "decides": "초안 실패 시 이미 계산된 검사·추적·정책 결과의 보존 및 조회 범위를 정한다.",
+      "follow_up_to": null,
+      "id": "Q-002"
+    },
+    {
+      "template": "T07",
+      "question": "만약 POST /cases 요청에서 한 파일이 1MiB를 초과하면서 run_id도 모르는 값이라면, 파일 크기 오류의 413과 입력 오류의 422 중 어느 응답을 우선해야 합니까?",
+      "decides": "파일 크기 오류와 다른 입력 오류가 동시에 존재할 때의 응답 우선순위를 정한다.",
+      "follow_up_to": null,
+      "id": "Q-003"
+    },
+    {
+      "template": "T12",
+      "question": "Q-001의 기록은 실제 출제자 답변이 아닌 모의 답변으로 표시되어 있습니다. SELECTION_REFERENCE.md의 내용을 제공하거나 읽을 수 있는 프로젝트 내 경로를 알려주시겠습니까? 해당 기준을 제외하려는 의도라면 실제 적용 범위를 직접 답해주세요.",
+      "decides": "누락된 공통 선정·제출 기준의 내용과 적용 여부를 확인한다.",
+      "follow_up_to": "Q-001",
+      "id": "Q-004"
+    },
+    {
+      "template": "T12",
+      "question": "Q-002의 기록은 실제 출제자 답변이 아닌 모의 답변으로 표시되어 있습니다. 초안 stub 실패로 BLOCKED가 되었을 때, GET /cases/{case_id}에서 이미 완료된 이미지 검사·LOT 추적·정책 판정 결과를 모두 보존해 반환하고 draft만 null로 두어야 합니까? 다른 처리라면 어떤 결과를 반환해야 합니까?",
+      "decides": "초안 실패 시 완료된 결과의 보존·조회 범위를 정한다.",
+      "follow_up_to": "Q-002",
+      "id": "Q-005"
+    },
+    {
+      "template": "T12",
+      "question": "Q-003의 기록은 실제 출제자 답변이 아닌 모의 답변으로 표시되어 있습니다. POST /cases에서 파일별 1MiB 초과와 모르는 run_id가 동시에 확인되면 413과 422 중 어느 응답을 우선해야 합니까?",
+      "decides": "파일 크기 오류와 입력 오류가 겹칠 때 응답 우선순위를 정한다.",
+      "follow_up_to": "Q-003",
+      "id": "Q-006"
+    }
+  ],
+  "answers": [
+    {
+      "question_id": "Q-001",
+      "text": "[오류 확인용 모의 답변 — 사용자 요청에 따라 에이전트가 작성. 실제 출제자 답변 아님] 이번 실행에서는 SELECTION_REFERENCE.md를 공통 기준에서 제외한다. 추가 요구사항은 적용하지 않고 현재 PROBLEM.md 본문만 이번 연습의 앱 명세로 사용한다.\n"
+    },
+    {
+      "question_id": "Q-002",
+      "text": "[오류 확인용 모의 답변 — 실제 출제자 답변 아님] BLOCKED 시 이미 완료된 이미지 검사·LOT 추적·정책 판정 결과는 모두 보존하고 GET에서 그대로 반환한다. 생성에 실패한 draft만 null로 두고 실패 이유를 오류 이력에 남긴다.\n"
+    },
+    {
+      "question_id": "Q-003",
+      "text": "[오류 확인용 모의 답변 — 실제 출제자 답변 아님] 입력 오류가 겹치면 파일별 1MiB 초과 여부를 우선 판정하여 413을 반환한다. 용량 제한을 통과한 뒤 나머지 누락/형식/run_id 오류를 422로 처리하고 사건은 만들지 않는다.\n"
+    },
+    {
+      "question_id": "Q-004",
+      "text": "사용자가 이번 오류 확인 실행의 조건 결정을 에이전트에게 위임했다. 이번 진단 회차에서는 SELECTION_REFERENCE.md를 적용 범위에서 제외하고 PROBLEM.md 본문만 적용한다. 이는 이번 회차의 확정된 테스트 조건이며 원래 출제자의 공식 답변 수령을 주장하지 않는다.\n"
+    },
+    {
+      "question_id": "Q-005",
+      "text": "사용자의 진단 실행 위임에 따라 이번 회차 적용 조건을 확정한다. BLOCKED에서도 이미 완료된 검사·추적·정책 결과는 보존해 반환하고 draft만 null이다. 예외 이유를 오류 이력에 기록한다.\n"
+    },
+    {
+      "question_id": "Q-006",
+      "text": "사용자의 진단 실행 위임에 따라 이번 회차 적용 조건을 확정한다. 파일 크기 검사를 우선 수행하여 1MiB 초과이면 다른 오류와 관계없이 413을 반환한다. 크기 제한 통과 뒤 나머지 입력 오류는 422이며 사건을 만들지 않는다.\n"
+    }
+  ],
+  "analysis": {
+    "report": {
+      "version": 1,
+      "questions": [],
+      "unresolved": [],
+      "references": [
+        "PROBLEM.md",
+        "BOUNDARY_QUESTION_TEMPLATE.md",
+        "AGENTS.md",
+        "HANDOFF.md",
+        "docs/IMPLEMENTATION_CONTRACT.md",
+        "docs/CROSS_PLATFORM.md",
+        "INTERVIEW.md"
+      ]
+    },
+    "answers_sha256": "6d9fac1e970f1b3d2b89ea644b9eceee459ff939b9eb34eff9e111dd5b30a818"
+  },
+  "error": null,
+  "answers_document_sha256": "aee168c4c66e6c98c291127917256145046903b0f79f0958ab5d5c75b012fa76"
+}

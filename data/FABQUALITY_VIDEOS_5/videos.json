@@ -1,0 +1,378 @@
+[
+  {
+    "id": "01_normal_noise",
+    "title": "Normal / noise only",
+    "file": "01_normal_noise.mp4",
+    "fps": 12,
+    "duration_seconds": 12,
+    "frame_count": 144,
+    "size": [
+      768,
+      768
+    ],
+    "analysis_size": [
+      128,
+      128
+    ],
+    "codec": "H.264 lossless RGB",
+    "audio": false,
+    "stages": [
+      {
+        "start_seconds": 0,
+        "end_seconds_exclusive": 12,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      }
+    ]
+  },
+  {
+    "id": "02_pattern_addition",
+    "title": "Pattern addition / 9 pixels",
+    "file": "02_pattern_addition.mp4",
+    "fps": 12,
+    "duration_seconds": 12,
+    "frame_count": 144,
+    "size": [
+      768,
+      768
+    ],
+    "analysis_size": [
+      128,
+      128
+    ],
+    "codec": "H.264 lossless RGB",
+    "audio": false,
+    "stages": [
+      {
+        "start_seconds": 0,
+        "end_seconds_exclusive": 3,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 3,
+        "end_seconds_exclusive": 9,
+        "injected_pixel_count": 9,
+        "candidate_pixels": 9,
+        "verdict": "defect",
+        "defect_pixels": 9,
+        "bbox": [
+          10,
+          20,
+          13,
+          23
+        ],
+        "review_lot_ids": [
+          "L1",
+          "L2",
+          "L3"
+        ],
+        "policy_id": "P_A",
+        "priority": "urgent",
+        "queue_code": "urgent-A",
+        "expected_state_after_first_step": "WAITING_APPROVAL",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 9,
+        "end_seconds_exclusive": 12,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      }
+    ]
+  },
+  {
+    "id": "03_pattern_removal",
+    "title": "Pattern removal / 6 pixels",
+    "file": "03_pattern_removal.mp4",
+    "fps": 12,
+    "duration_seconds": 12,
+    "frame_count": 144,
+    "size": [
+      768,
+      768
+    ],
+    "analysis_size": [
+      128,
+      128
+    ],
+    "codec": "H.264 lossless RGB",
+    "audio": false,
+    "stages": [
+      {
+        "start_seconds": 0,
+        "end_seconds_exclusive": 3,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 3,
+        "end_seconds_exclusive": 9,
+        "injected_pixel_count": 6,
+        "candidate_pixels": 6,
+        "verdict": "defect",
+        "defect_pixels": 6,
+        "bbox": [
+          50,
+          30,
+          53,
+          32
+        ],
+        "review_lot_ids": [
+          "L1",
+          "L2",
+          "L3"
+        ],
+        "policy_id": "P_A",
+        "priority": "urgent",
+        "queue_code": "urgent-A",
+        "expected_state_after_first_step": "WAITING_APPROVAL",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 9,
+        "end_seconds_exclusive": 12,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      }
+    ]
+  },
+  {
+    "id": "04_boundary_3_to_4",
+    "title": "Detection boundary / 3 to 4",
+    "file": "04_boundary_3_to_4.mp4",
+    "fps": 12,
+    "duration_seconds": 12,
+    "frame_count": 144,
+    "size": [
+      768,
+      768
+    ],
+    "analysis_size": [
+      128,
+      128
+    ],
+    "codec": "H.264 lossless RGB",
+    "audio": false,
+    "stages": [
+      {
+        "start_seconds": 0,
+        "end_seconds_exclusive": 3,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 3,
+        "end_seconds_exclusive": 6,
+        "injected_pixel_count": 3,
+        "candidate_pixels": 3,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 6,
+        "end_seconds_exclusive": 9,
+        "injected_pixel_count": 4,
+        "candidate_pixels": 4,
+        "verdict": "defect",
+        "defect_pixels": 4,
+        "bbox": [
+          3,
+          3,
+          5,
+          5
+        ],
+        "review_lot_ids": [
+          "L1",
+          "L2",
+          "L3"
+        ],
+        "policy_id": "P_A",
+        "priority": "urgent",
+        "queue_code": "urgent-A",
+        "expected_state_after_first_step": "WAITING_APPROVAL",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 9,
+        "end_seconds_exclusive": 12,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      }
+    ]
+  },
+  {
+    "id": "05_boundary_63_64_65",
+    "title": "Priority boundary / 63, 64, 65",
+    "file": "05_boundary_63_64_65.mp4",
+    "fps": 12,
+    "duration_seconds": 12,
+    "frame_count": 144,
+    "size": [
+      768,
+      768
+    ],
+    "analysis_size": [
+      128,
+      128
+    ],
+    "codec": "H.264 lossless RGB",
+    "audio": false,
+    "stages": [
+      {
+        "start_seconds": 0,
+        "end_seconds_exclusive": 3,
+        "injected_pixel_count": 0,
+        "candidate_pixels": 0,
+        "verdict": "normal",
+        "defect_pixels": 0,
+        "bbox": null,
+        "review_lot_ids": null,
+        "policy_id": null,
+        "priority": null,
+        "queue_code": null,
+        "expected_state_after_first_step": "CLEARED",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 3,
+        "end_seconds_exclusive": 6,
+        "injected_pixel_count": 63,
+        "candidate_pixels": 63,
+        "verdict": "defect",
+        "defect_pixels": 63,
+        "bbox": [
+          8,
+          48,
+          16,
+          56
+        ],
+        "review_lot_ids": [
+          "L1",
+          "L2"
+        ],
+        "policy_id": "P_A",
+        "priority": "standard",
+        "queue_code": "standard-A",
+        "expected_state_after_first_step": "WAITING_APPROVAL",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 6,
+        "end_seconds_exclusive": 9,
+        "injected_pixel_count": 64,
+        "candidate_pixels": 64,
+        "verdict": "defect",
+        "defect_pixels": 64,
+        "bbox": [
+          8,
+          48,
+          16,
+          56
+        ],
+        "review_lot_ids": [
+          "L1",
+          "L2"
+        ],
+        "policy_id": "P_A",
+        "priority": "urgent",
+        "queue_code": "urgent-A",
+        "expected_state_after_first_step": "WAITING_APPROVAL",
+        "expected_calls_before_approval": 0
+      },
+      {
+        "start_seconds": 9,
+        "end_seconds_exclusive": 12,
+        "injected_pixel_count": 65,
+        "candidate_pixels": 65,
+        "verdict": "defect",
+        "defect_pixels": 65,
+        "bbox": [
+          8,
+          48,
+          16,
+          57
+        ],
+        "review_lot_ids": [
+          "L1",
+          "L2"
+        ],
+        "policy_id": "P_A",
+        "priority": "urgent",
+        "queue_code": "urgent-A",
+        "expected_state_after_first_step": "WAITING_APPROVAL",
+        "expected_calls_before_approval": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,230 @@
+{
+  "nodes": [
+    {
+      "id": "L0",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L1",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L2",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L3",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L4",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L5",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "E0",
+      "type": "Equipment",
+      "properties": {}
+    },
+    {
+      "id": "E1",
+      "type": "Equipment",
+      "properties": {}
+    },
+    {
+      "id": "A",
+      "type": "QualityPolicy",
+      "properties": {
+        "urgent_pixel_threshold": 64,
+        "urgent_lot_threshold": 3,
+        "standard_queue": "A_STD",
+        "urgent_queue": "A_URG"
+      }
+    },
+    {
+      "id": "B",
+      "type": "QualityPolicy",
+      "properties": {
+        "urgent_pixel_threshold": 128,
+        "urgent_lot_threshold": 4,
+        "standard_queue": "B_STD",
+        "urgent_queue": "B_URG"
+      }
+    },
+    {
+      "id": "r0",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T12:00:00+00:00"
+      }
+    },
+    {
+      "id": "r1",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T11:00:00+00:00"
+      }
+    },
+    {
+      "id": "r2",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T11:30:00+00:00"
+      }
+    },
+    {
+      "id": "r3",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T10:59:00+00:00"
+      }
+    },
+    {
+      "id": "r4",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T10:58:00+00:00"
+      }
+    },
+    {
+      "id": "r5",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T12:00:00.000001+00:00"
+      }
+    },
+    {
+      "id": "r6",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T11:45:00+00:00"
+      }
+    },
+    {
+      "id": "r7",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T10:59:59.999999+00:00"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "policy0",
+      "type": "REVIEW_POLICY",
+      "from_id": "E0",
+      "to_id": "A"
+    },
+    {
+      "id": "policy1",
+      "type": "REVIEW_POLICY",
+      "from_id": "E1",
+      "to_id": "B"
+    },
+    {
+      "id": "lot0",
+      "type": "OF_LOT",
+      "from_id": "r0",
+      "to_id": "L0"
+    },
+    {
+      "id": "eq0",
+      "type": "ON",
+      "from_id": "r0",
+      "to_id": "E0"
+    },
+    {
+      "id": "lot1",
+      "type": "OF_LOT",
+      "from_id": "r1",
+      "to_id": "L1"
+    },
+    {
+      "id": "eq1",
+      "type": "ON",
+      "from_id": "r1",
+      "to_id": "E0"
+    },
+    {
+      "id": "lot2",
+      "type": "OF_LOT",
+      "from_id": "r2",
+      "to_id": "L1"
+    },
+    {
+      "id": "eq2",
+      "type": "ON",
+      "from_id": "r2",
+      "to_id": "E0"
+    },
+    {
+      "id": "lot3",
+      "type": "OF_LOT",
+      "from_id": "r3",
+      "to_id": "L2"
+    },
+    {
+      "id": "eq3",
+      "type": "ON",
+      "from_id": "r3",
+      "to_id": "E0"
+    },
+    {
+      "id": "lot4",
+      "type": "OF_LOT",
+      "from_id": "r4",
+      "to_id": "L3"
+    },
+    {
+      "id": "eq4",
+      "type": "ON",
+      "from_id": "r4",
+      "to_id": "E0"
+    },
+    {
+      "id": "lot5",
+      "type": "OF_LOT",
+      "from_id": "r5",
+      "to_id": "L4"
+    },
+    {
+      "id": "eq5",
+      "type": "ON",
+      "from_id": "r5",
+      "to_id": "E0"
+    },
+    {
+      "id": "lot6",
+      "type": "OF_LOT",
+      "from_id": "r6",
+      "to_id": "L5"
+    },
+    {
+      "id": "eq6",
+      "type": "ON",
+      "from_id": "r6",
+      "to_id": "E1"
+    },
+    {
+      "id": "lot7",
+      "type": "OF_LOT",
+      "from_id": "r7",
+      "to_id": "L5"
+    },
+    {
+      "id": "eq7",
+      "type": "ON",
+      "from_id": "r7",
+      "to_id": "E0"
+    }
+  ]
+}

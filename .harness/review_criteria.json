@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "axes": [
+    {"id": "intent", "title": "의도", "criteria": [
+      {"id": "COR01", "text": "원래 목표·범위·제약과 실제 경계 질문/답변을 보존하고 요청한 결과를 구현했는가", "execution": false},
+      {"id": "COR02", "text": "요구사항과 확정 답변을 구현 코드 및 필수 검증에 연결해 누락을 확인할 수 있는가", "execution": false}
+    ]},
+    {"id": "understanding", "title": "인지", "criteria": [
+      {"id": "COR03", "text": "구조·데이터 흐름 설명이 코드와 일치하며 잘못된 값·실행 순서·누락 입력·경계 조건이 결과를 어떻게 바꾸는지 설명하고 확인했는가", "execution": true},
+      {"id": "COR04", "text": "설계와 판단 근거를 실제 명세·관측에 연결하고 한 사례의 성공을 전체 정상으로 일반화하지 않았는가", "execution": false}
+    ]},
+    {"id": "technical", "title": "기술", "criteria": [
+      {"id": "TEST01", "text": "실제로 실행한 검증의 PASS·FAIL·SKIP·NOT_RUN을 구분하고 필수 항목이 빠짐없이 수행되었는가", "execution": true},
+      {"id": "TEST02", "text": "격리된 복사본에 실제 결함을 주입하고 검증이 해당 실패를 탐지함을 실행으로 확인했는가", "execution": true},
+      {"id": "TEST03", "text": "정상·오류·경계·결측 및 대표적인 여러 사례를 실행해 검증 범위와 남은 한계를 확인했는가", "execution": true},
+      {"id": "TEST04", "text": "실행 명령·입력·출력·코드 해시·검토 범위가 이번 검증과 연결되어 재현 가능한가", "execution": true},
+      {"id": "REL01", "text": "해당하는 업로드·폴링·재시도·fallback 경로와 실패 동작을 실제로 검증했는가", "execution": true},
+      {"id": "REL02", "text": "timeout 응답 반환, 작업 취소, 실제 프로세스 종료를 각각 구분하여 검증했는가", "execution": true},
+      {"id": "REL03", "text": "비밀값 노출과 개인 컴퓨터의 고정 경로 의존성을 확인하고 제거했는가", "execution": false},
+      {"id": "REL04", "text": "실행 후 스레드·자손 프로세스·자원 누수가 남지 않는지 실제로 확인했는가", "execution": true}
+    ]},
+    {"id": "honesty", "title": "정직성", "criteria": [
+      {"id": "MEAS01", "text": "측정 데이터·모델/옵션·환경·반복횟수 등 조건과 원시결과를 작업 완료 주장·요약과 분리해 기록하고, 문서 설명/수치를 코드 및 로그와 대조했는가", "execution": false},
+      {"id": "MEAS02", "text": "처리 완료 수·형식 준수율·정답률·기본값 사용 수를 구분해 검증했는가; 측정 대상이 없으면 미측정 또는 사전 지정 NA로 밝혔는가", "execution": true},
+      {"id": "MEAS03", "text": "실패·결측을 기본값이나 fallback 값으로 정상처럼 숨기지 않고 출처와 기본값 사용 수를 구분했는가", "execution": true},
+      {"id": "MEAS04", "text": "실패·미검증·미실행·오래된 결과를 그대로 밝히고, 한 사례 개선을 전체성능 향상으로 확대하지 않으며 실행하지 않은 검증이나 모델 성공을 주장하지 않았는가", "execution": false}
+    ]},
+    {"id": "communication", "title": "소통", "criteria": [
+      {"id": "HAND01", "text": "인계 시점을 미리 정하고 실제 그 시점에 갱신했으며, 문서에 목표·현재 진행·변경·실행 결과·실패 원인·남은 일·다음 명령을 기록했는가", "execution": false},
+      {"id": "HAND02", "text": "새 세션이 문서만 읽고 상태를 파악하고 다음 작업을 수행하는 인수인계 검증을 실제로 실행했는가", "execution": true},
+      {"id": "HAND03", "text": "README의 설치·실행 절차가 다른 대상 환경에서도 작동하는지 실제로 검증했는가", "execution": true},
+      {"id": "HAND04", "text": "설치 전제·재현 명령·입출력·실행 환경·제약 및 미해결 사항을 사용자가 이해할 수 있게 전달했는가", "execution": false}
+    ]}
+  ]
+}

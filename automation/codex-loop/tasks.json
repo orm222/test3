@@ -1,0 +1,105 @@
+[
+  {
+    "id": "T001",
+    "goal": "Implement the complete integrated FabQuality application against PROBLEM.md and the protected diagnostic contract, then pass every fixed acceptance ID.",
+    "requirements": [
+      {
+        "id": "R001",
+        "text": "Implement all PROBLEM.md requirements together through fabquality.app.create_app and the protected implementation contract; CPU single process in-memory, deterministic explanation-only stub, local mock, no external API.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R002",
+        "text": "Generate 4 calibration and 8 evaluation real 128x128 8-bit L PNG pairs with independent fixed seeds; noise <=5, addition/removal injections on appropriate pixels, independent truth masks; no label/filename/seed-based detection.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R003",
+        "text": "Signed abs diff >32, total candidates >=4 defect, full union mask and half-open bbox; normal zero final mask; cover 32/33 and 3/4 boundaries and disconnected candidates.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R004",
+        "text": "Validate typed ontology node/relation uniqueness, references, allowed directions/cardinalities, offset-aware ended_at and policy types/thresholds/queues at startup; static 2 equipment,6 LOT,8 runs,2 policies, only Inspection/INSPECTS added per case.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R005",
+        "text": "Traverse same-equipment inclusive event-time 60 minute window, exclude future/other equipment, sort unique LOTs while preserving every valid run path, node/relation IDs and both times.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R006",
+        "text": "Code-built immutable draft and policy evidence; policy A 64/3, B 128/4, pixel OR unique LOT thresholds, 63/64/65 and LOT2/3/4; approved draft and queue preserved in actual mock ticket.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R007",
+        "text": "All five public HTTP endpoints and snapshot fields, approval barrier zero mock calls, valid state transitions, same decision retransmission, opposite 409, terminal no-op; BLOCKED preserves completed results per Q-002/005.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R008",
+        "text": "Actual mock calls once per approved step, attempts increment before call, normal/after_commit_once/always_fail modes, idempotent case+draft ticket, changed draft rejected, retry twice then third failure FAILED; preserve errors/history/results.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R009",
+        "text": "Input handling actual PNG, each file <=1MiB, 413 takes priority per Q-003/006, invalid fields/channel/size/PNG/run 422 with no case, event dedup by decoded arrays/run, conflict409/notfound404, distinct event same run separate.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R010",
+        "text": "Independent eval/run executes all original 10 scenarios in fresh state, isolated live cases, fixed image/LOT/path/automation/policy metrics, numerator/denominator and null for zero denominator, diagnostic masks/paths/history for failures.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R011",
+        "text": "Use only PROBLEM.md scope with SELECTION_REFERENCE excluded per diagnostic Q-001/004; never claim official examiner answers. Supplementary practice data is not the original evaluation pairs and no truth masks/labels enter service judgement.",
+        "check_ids": [
+          "acceptance"
+        ]
+      },
+      {
+        "id": "R012",
+        "text": "README data/run/eval commands, requirement code mapping, execution evidence and unverified scope; INTERVIEW bottlenecks/assumptions/success criteria truthfully, HANDOFF current status, distinguish image anomaly/related LOT/confirmed defect; use Python3.9 unittest, pinned requirements and logged commands; do not alter protected tests/contracts/spec/answers/harness/prompts/criteria/models or fabricate reviews.",
+        "check_ids": [
+          "acceptance"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "id": "acceptance",
+        "argv": [
+          "{python}",
+          "-B",
+          ".harness/check_unittest.py",
+          "--start-directory",
+          "tests/acceptance"
+        ],
+        "success_regex": "\"status\"\\s*:\\s*\"passed\""
+      }
+    ]
+  }
+]

@@ -1,0 +1,269 @@
+{
+  "schema": {
+    "node_types": {
+      "Inspection": "A case-local inspection; its id is the case_id.",
+      "ProcessRun": "A completed manufacturing run with an offset-aware ended_at.",
+      "Lot": "A manufacturing batch; review does not establish a defect.",
+      "Equipment": "The equipment used by a completed run.",
+      "QualityPolicy": "Integer urgency thresholds and distinct queue codes."
+    },
+    "relations": [
+      {
+        "type": "INSPECTS",
+        "from_type": "Inspection",
+        "to_type": "ProcessRun",
+        "outgoing_exactly": 1,
+        "meaning": "The case inspects one run. Stored in case state, not this static graph."
+      },
+      {
+        "type": "OF_LOT",
+        "from_type": "ProcessRun",
+        "to_type": "Lot",
+        "outgoing_exactly": 1,
+        "meaning": "The run belongs to exactly one lot."
+      },
+      {
+        "type": "ON",
+        "from_type": "ProcessRun",
+        "to_type": "Equipment",
+        "outgoing_exactly": 1,
+        "meaning": "The run was performed on exactly one equipment."
+      },
+      {
+        "type": "REVIEW_POLICY",
+        "from_type": "Equipment",
+        "to_type": "QualityPolicy",
+        "outgoing_exactly": 1,
+        "meaning": "The equipment uses one policy; policy sharing is allowed."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "E1",
+      "type": "Equipment",
+      "properties": {}
+    },
+    {
+      "id": "E2",
+      "type": "Equipment",
+      "properties": {}
+    },
+    {
+      "id": "L1",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L2",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L3",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L4",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L5",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "L6",
+      "type": "Lot",
+      "properties": {}
+    },
+    {
+      "id": "R1",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T12:00:00Z"
+      }
+    },
+    {
+      "id": "R2",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T11:00:00Z"
+      }
+    },
+    {
+      "id": "R3",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T11:30:00Z"
+      }
+    },
+    {
+      "id": "R4",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T10:59:59Z"
+      }
+    },
+    {
+      "id": "R5",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T12:00:01Z"
+      }
+    },
+    {
+      "id": "R6",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T11:45:00Z"
+      }
+    },
+    {
+      "id": "R7",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T12:00:00Z"
+      }
+    },
+    {
+      "id": "R8",
+      "type": "ProcessRun",
+      "properties": {
+        "ended_at": "2026-01-01T12:00:00Z"
+      }
+    },
+    {
+      "id": "P_A",
+      "type": "QualityPolicy",
+      "properties": {
+        "urgent_pixel_threshold": 64,
+        "urgent_lot_threshold": 3,
+        "standard_queue": "standard-A",
+        "urgent_queue": "urgent-A"
+      }
+    },
+    {
+      "id": "P_B",
+      "type": "QualityPolicy",
+      "properties": {
+        "urgent_pixel_threshold": 128,
+        "urgent_lot_threshold": 4,
+        "standard_queue": "standard-B",
+        "urgent_queue": "urgent-B"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "R1:ON:E1",
+      "type": "ON",
+      "from_id": "R1",
+      "to_id": "E1"
+    },
+    {
+      "id": "R1:OF_LOT:L1",
+      "type": "OF_LOT",
+      "from_id": "R1",
+      "to_id": "L1"
+    },
+    {
+      "id": "R2:ON:E1",
+      "type": "ON",
+      "from_id": "R2",
+      "to_id": "E1"
+    },
+    {
+      "id": "R2:OF_LOT:L2",
+      "type": "OF_LOT",
+      "from_id": "R2",
+      "to_id": "L2"
+    },
+    {
+      "id": "R3:ON:E1",
+      "type": "ON",
+      "from_id": "R3",
+      "to_id": "E1"
+    },
+    {
+      "id": "R3:OF_LOT:L2",
+      "type": "OF_LOT",
+      "from_id": "R3",
+      "to_id": "L2"
+    },
+    {
+      "id": "R4:ON:E1",
+      "type": "ON",
+      "from_id": "R4",
+      "to_id": "E1"
+    },
+    {
+      "id": "R4:OF_LOT:L4",
+      "type": "OF_LOT",
+      "from_id": "R4",
+      "to_id": "L4"
+    },
+    {
+      "id": "R5:ON:E1",
+      "type": "ON",
+      "from_id": "R5",
+      "to_id": "E1"
+    },
+    {
+      "id": "R5:OF_LOT:L4",
+      "type": "OF_LOT",
+      "from_id": "R5",
+      "to_id": "L4"
+    },
+    {
+      "id": "R6:ON:E2",
+      "type": "ON",
+      "from_id": "R6",
+      "to_id": "E2"
+    },
+    {
+      "id": "R6:OF_LOT:L5",
+      "type": "OF_LOT",
+      "from_id": "R6",
+      "to_id": "L5"
+    },
+    {
+      "id": "R7:ON:E2",
+      "type": "ON",
+      "from_id": "R7",
+      "to_id": "E2"
+    },
+    {
+      "id": "R7:OF_LOT:L6",
+      "type": "OF_LOT",
+      "from_id": "R7",
+      "to_id": "L6"
+    },
+    {
+      "id": "R8:ON:E1",
+      "type": "ON",
+      "from_id": "R8",
+      "to_id": "E1"
+    },
+    {
+      "id": "R8:OF_LOT:L3",
+      "type": "OF_LOT",
+      "from_id": "R8",
+      "to_id": "L3"
+    },
+    {
+      "id": "E1:REVIEW_POLICY:P_A",
+      "type": "REVIEW_POLICY",
+      "from_id": "E1",
+      "to_id": "P_A"
+    },
+    {
+      "id": "E2:REVIEW_POLICY:P_B",
+      "type": "REVIEW_POLICY",
+      "from_id": "E2",
+      "to_id": "P_B"
+    }
+  ]
+}

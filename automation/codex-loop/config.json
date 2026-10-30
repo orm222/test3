@@ -1,0 +1,46 @@
+{
+  "project": "../..",
+  "spec": "PROBLEM.md",
+  "tasks_file": "tasks.json",
+  "builder_model": "gpt-6.1-sol",
+  "reviewer_model": "gpt-6.1-terra",
+  "review_not_applicable": {},
+  "codex_command": [
+    "codex"
+  ],
+  "max_repairs": 3,
+  "stage_timeout_seconds": 900,
+  "total_timeout_seconds": 7200,
+  "run_root": "../../../.codex-loop-runs/test3-3e4967ca",
+  "protected_paths": [
+    "run_harness.py",
+    "requirements-harness.txt",
+    ".harness/harness.py",
+    ".harness/acceptance.py",
+    ".harness/check_unittest.py",
+    ".harness/acceptance.json",
+    ".harness/boundary.py",
+    ".harness/clarify.py",
+    ".harness/clarify.schema.json",
+    ".harness/clarify_prompt.md",
+    "BOUNDARY_QUESTION_TEMPLATE.md",
+    ".harness/reports.py",
+    ".harness/review_criteria.json",
+    ".harness/verification.py",
+    ".harness/checks.json",
+    ".harness/review_instructions.md",
+    ".harness/review.schema.json",
+    ".codex/agents/kty-reviewer.toml"
+  ],
+  "exclude_dirs": [
+    ".git",
+    ".venv",
+    "venv",
+    "node_modules",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".mypy_cache",
+    ".harness/work"
+  ]
+}

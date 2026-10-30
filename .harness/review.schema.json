@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "summary": {"type": "string"},
+    "reviewed_files": {"type": "array", "items": {"type": "string"}},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {"type": "string", "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"]},
+          "file": {"type": "string"},
+          "line": {"type": "integer"},
+          "input": {"type": "string"},
+          "evidence": {"type": "string"}
+        },
+        "required": ["severity", "file", "line", "input", "evidence"],
+        "additionalProperties": false
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "criterion_scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterion_id": {"type": "string"},
+          "status": {"type": "string", "enum": ["PASS", "PARTIAL", "FAIL", "UNVERIFIED", "NA"]},
+          "reason": {"type": "string"},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["criterion_id", "status", "reason", "evidence_refs"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["summary", "reviewed_files", "findings", "limitations", "criterion_scores"],
+  "additionalProperties": false
+}

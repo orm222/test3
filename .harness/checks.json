@@ -1,0 +1,21 @@
+{
+  "inputs": [
+    "PROBLEM.md",
+    "BOUNDARY_ANSWERS.md",
+    "docs/IMPLEMENTATION_CONTRACT.md",
+    "requirements-app.txt"
+  ],
+  "checks": [
+    {
+      "name": "acceptance",
+      "command": [
+        "{python}",
+        "-B",
+        ".harness/check_unittest.py",
+        "--start-directory",
+        "tests/acceptance"
+      ],
+      "timeout_seconds": 120
+    }
+  ]
+}

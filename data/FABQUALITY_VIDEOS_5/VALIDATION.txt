@@ -1,0 +1,7 @@
+Ran 5 tests in 10.333s
+OK
+Skipped: 0
+All 720 decoded frames equal source PNGs exactly.
+All 720 frame image results match the supplied vision module.
+All defect frame LOT and policy results match the supplied knowledge module.
+HTTP workflow, approvals and retries were not retested.

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "required_test_ids": [
+    "test_fabquality.FabQualityAcceptance.test_01_normal_and_initial_nulls",
+    "test_fabquality.FabQualityAcceptance.test_02_defect_trace_draft_approval_ticket",
+    "test_fabquality.FabQualityAcceptance.test_03_time_window_duplicate_paths",
+    "test_fabquality.FabQualityAcceptance.test_04_invalid_png_fields_run_and_graph",
+    "test_fabquality.FabQualityAcceptance.test_05_event_and_decision_idempotency",
+    "test_fabquality.FabQualityAcceptance.test_06_approval_barrier_rejection",
+    "test_fabquality.FabQualityAcceptance.test_07_response_loss_retry",
+    "test_fabquality.FabQualityAcceptance.test_08_blocked_preserves_results_and_permanent_failure",
+    "test_fabquality.FabQualityAcceptance.test_09_pixel_policy_boundaries_and_B",
+    "test_fabquality.FabQualityAcceptance.test_10_lot_policy_and_urgent_retry",
+    "test_fabquality.FabQualityAcceptance.test_11_signed_difference_32_and_three_four",
+    "test_fabquality.FabQualityAcceptance.test_12_size_priority_no_event_created",
+    "test_fabquality.FabQualityAcceptance.test_13_reference_excluded_service_scope",
+    "test_fabquality.FabQualityAcceptance.test_14_twelve_independent_pairs",
+    "test_fabquality.FabQualityAcceptance.test_15_eval_metrics_isolated_and_repeatable"
+  ]
+}

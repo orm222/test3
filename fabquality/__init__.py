@@ -1,0 +1,1 @@
+"""Local FabQuality diagnostic application."""

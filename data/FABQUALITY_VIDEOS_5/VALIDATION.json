@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "unittest_tests_run": 5,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 10.333,
+  "videos": 5,
+  "frames_per_video": 144,
+  "total_frames": 720,
+  "duration_seconds_each": 12,
+  "fps": 12,
+  "size": [
+    768,
+    768
+  ],
+  "analysis_size": [
+    128,
+    128
+  ],
+  "all_decoded_rgb_channels_equal_source_png": true,
+  "all_frame_vision_results_match_uploaded_code": true,
+  "all_defect_frame_lot_and_policy_results_match_uploaded_code": true,
+  "full_http_worker_approval_retry_not_retested": true,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "Pillow": "12.3.0",
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "source_archive": "FABQUALITY_ORAL_FINAL(4).zip",
+  "source_archive_sha256": "26c72f30d077ec530b15be3aa5f34edbd1e566467167ccf0c5e28dfcb5048a33"
+}
